@@ -9,22 +9,29 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h1>tre</h1>
-        <h2>The 60-30-10 color rule generator</h2>
+      <div className='header'>
+        <h1 className='tre'>tre</h1>
+        <h2 className='info'>The 60-30-10 color rule generator</h2>
+      </div>
         <div className='output-container'>
           <VerticalPalette colors={colors} />
           <Illustration colors={colors}/>
           <div className='info-container'>
-            <ColorTag/>
-            <ColorTag/>
-            <ColorTag/>            
-            <h3>Totally Random</h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Adipiscing nunc lectus metus odio a facilisis pellentesque. Sodales ipsum vestibulum bibendum elit diam. </p>
-            <button>Generate Palette</button>
-          </div>
+             <div className='color-tags'>
+              <ColorTag text="60% - Primary" color={colors[0]}/>    
+              <ColorTag text="30% - Support" color={colors[1]}/>    
+              <ColorTag text="10% - Accent" color={colors[2]}/>  
+              </div>  
+
+              <div className='method-container'>
+                <h3 className='method-title'>Totally Random</h3>
+                <p className='method-info'>Lorem ipsum dolor sit amet consectetur. Adipiscing nunc lectus metus odio a facilisis pellentesque. Sodales ipsum vestibulum bibendum elit diam. </p>
+              </div>
+          
         </div>
-      </div>
+        <button>Generate Palette</button>
+
+    </div>
     </div>
   );
 }
