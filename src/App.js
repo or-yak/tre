@@ -11,10 +11,9 @@ function App() {
     <div className="App">
       <div className='header'>
         <h1 className='tre'>tre</h1>
-        <h2 className='info'>The 60-30-10 color rule generator</h2>
+        <h2 className='info'>The 60-30-10 rule color palette generator<br/> Press 'space' to generate a new palette</h2>
       </div>
         <div className='output-container'>
-          <VerticalPalette colors={colors} />
           <Illustration colors={colors}/>
           <div className='info-container'>
              <div className='color-tags'>
@@ -24,12 +23,13 @@ function App() {
               </div>  
 
               <div className='method-container'>
+                <hr/>
                 <h3 className='method-title'>Totally Random</h3>
                 <p className='method-info'>Lorem ipsum dolor sit amet consectetur. Adipiscing nunc lectus metus odio a facilisis pellentesque. Sodales ipsum vestibulum bibendum elit diam. </p>
               </div>
           
         </div>
-        <button>Generate Palette</button>
+        
 
     </div>
     </div>

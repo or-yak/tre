@@ -1,6 +1,7 @@
 import React from 'react'
 import { formatColor } from '../ColorMethods'
 
+
 export default function Illustration({colors}) {
   return (
     <div className='illustration-container'>
@@ -10,6 +11,7 @@ export default function Illustration({colors}) {
 <rect x="157" y="153" width="82" height="82" fill={formatColor(colors[2])}/>
 </svg>
     <p className='illustration-name'>TARGET</p>
+
     </div>
 
   )
