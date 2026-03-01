@@ -1,11 +1,26 @@
 import './App.css';
-import VerticalPalette from './nodes/VerticalPalette';
+// import VerticalPalette from './nodes/VerticalPalette';
 import Illustration from './nodes/Illustration';
 import ColorTag from './nodes/ColorTag';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { totallyRandom } from './ColorMethods'
+
 
 function App() {
   const [colors,setColors] = useState([[230,100,19],[0,100,41],[51,98,52]]);
+  const [info, setInfo] = useState(["Press space to activate the generator", " "]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.code === "Space") {
+        const newPalette = totallyRandom();
+        setColors(newPalette.pallete);
+        setInfo(newPalette.info);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="App">
@@ -24,8 +39,8 @@ function App() {
 
               <div className='method-container'>
                 <hr/>
-                <h3 className='method-title'>Totally Random</h3>
-                <p className='method-info'>Lorem ipsum dolor sit amet consectetur. Adipiscing nunc lectus metus odio a facilisis pellentesque. Sodales ipsum vestibulum bibendum elit diam. </p>
+                <h3 className='method-title'>{info[0]}</h3>
+                <p className='method-info'>{info[1]}</p>
               </div>
           
         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { formatColor } from '../ColorMethods'
+import { formatColor, hslToHex } from '../ColorMethods'
+import namer from 'color-namer';
 
 export default function ColorTag({color, text}) {
   return (
@@ -8,7 +9,8 @@ export default function ColorTag({color, text}) {
         <div className='color-tag-info'>
           <h3 className='color-tag-title'>{text}</h3>
           <p>{formatColor(color)}</p>
-           <p>{formatColor(color)}</p>
+          <p>{hslToHex(color)}</p>
+          <p>{namer(hslToHex(color)).ntc[0].name}</p>
         </div>
 
 

@@ -25,6 +25,10 @@
   justify-content: center;
 }
 
+::selection {
+  background: #05203A12;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 /* vertical palette */
 
@@ -43,7 +47,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .illustration-name {
@@ -126,6 +130,8 @@ hr {
   justify-content: flex-start;
   margin: 0;
   margin-top: 8px;
+    width: 60vh;
+
 
 }
 
