@@ -44,30 +44,30 @@ export function totallyRandom () {
   ], info: ["Totally random", "Three random colors, no rules applied"]};
 }
 
-export function monochromaticBrightAccent () {
+export function monochromaticTints () {
   // 1 
   const h = getRandomInt(0, 360);
   const s = getRandomInt(0, 100);
-  const l = getRandomInt(25, 50);
+  const l = getRandomInt(33, 66);
 
   return {palette: [
+    [h, s, Math.max(0, l - getRandomInt(9, 34))],
     [h, s, l],
-    [h, s, Math.max(0, l -  getRandomInt(5, 25))],
-    [h, s, Math.min(100, l + getRandomInt(25, 50))]
-  ], info: ["Monochromatic bright accent", "Three colors with the same hue and saturation but different lightness, the accent color is brighter."]};
+    [h, s, Math.min(100, l + getRandomInt(9, 34))]
+  ], info: ["Monochromatic tints", "Three colors with the same hue and saturation but the lightness is increased"]};
 }
 
-export function monochromaticBrightPrimary () {
+export function monochromaticShades () {
   // 2
   const h = getRandomInt(0, 360);
   const s = getRandomInt(0, 100);
-  const l = getRandomInt(75, 100); 
+  const l = getRandomInt(33, 66);
 
   return {palette: [
+    [h, s, Math.min(100, l + getRandomInt(9, 34))],
     [h, s, l],
-    [h, s, l -  getRandomInt(5, 25)],
-    [h, s, Math.max(0, l - getRandomInt(50, 100))]
-  ], info: ["Monochromatic bright primary", "Three colors with the same hue and saturation but different lightness, the primary color is brighter."]};
+    [h, s, Math.max(0, l - getRandomInt(9, 34))]
+  ], info: ["Monochromatic shades", "Three colors with the same hue and saturation but the lightness is decreased"]};
 }
 
 export function tightAnalogous() {
@@ -146,9 +146,50 @@ export function triadic() {
   return result
 }
 
+export function monochromaticTones () {
+  // 7 
+  const h = getRandomInt(0, 360);
+  const s = getRandomInt(33, 44);
+  const l = getRandomInt(25, 85);
+
+  return {palette: [
+    [h, Math.max(0, s - getRandomInt(20, 34)), l],
+    [h, s, l],
+    [h, Math.min(100, s + getRandomInt(20, 34)), l]
+  ], info: ["Monochromatic tones", "Three colors with the same hue and lightness but the saturation is increased"]};
+}
+
+export function randomWarm () {
+  // 8
+  return {palette: [
+    [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+  ], info: ["Random warm", "Three random warm hues (h = 0°- 120°), no other rules applied"]};
+}
+
+export function randomCool () {
+  // 9
+  return {palette: [
+    [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+  ], info: ["Random cool", "Three random cool hues (h = 120°- 240°), no other rules applied"]};
+}
+
+export function randomViolets () {
+  // 9
+  return {palette: [
+    [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
+    [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+  ], info: ["Random violets", "Three random violet hues (h = 240°- 360°), no other rules applied"]};
+}
+
+
 export function randomPalette () { 
-  const key = getRandomInt(0, 6);
-  const generators = [totallyRandom, monochromaticBrightAccent, monochromaticBrightPrimary, tightAnalogous, standardAnalogous, wideAnalogous, triadic];
+  const key = getRandomInt(0, 10);
+  const generators = [totallyRandom, monochromaticTints, monochromaticShades, tightAnalogous, standardAnalogous, wideAnalogous, triadic, monochromaticTones, randomWarm, randomCool, randomViolets];
   return generators[key]();
 
 }
