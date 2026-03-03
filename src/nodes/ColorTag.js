@@ -10,7 +10,7 @@ export default function ColorTag({color, text}) {
           <h3 className='color-tag-title'>{text}</h3>
           <p>{formatColor(color)}</p>
           <p>{hslToHex(color)}</p>
-          <p>{namer(hslToHex(color)).ntc[0].name}</p>
+          <p>{namer(formatColor(color)).ntc[0].name}</p>
         </div>
 
 

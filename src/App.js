@@ -3,7 +3,7 @@ import './App.css';
 import Illustration from './nodes/Illustration';
 import ColorTag from './nodes/ColorTag';
 import { useState, useEffect } from 'react';
-import { totallyRandom } from './ColorMethods'
+import { randomPalette } from './ColorMethods'
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Space") {
-        const newPalette = totallyRandom();
-        setColors(newPalette.pallete);
+        const newPalette = randomPalette();
+        setColors(newPalette.palette);
         setInfo(newPalette.info);
       }
     };
