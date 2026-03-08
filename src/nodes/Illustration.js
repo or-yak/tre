@@ -13,13 +13,13 @@ const illustrations = [
     )
   }, 
   {
-    name: 'RIFT',
+    name: 'BALANCE',
     svg: (colors) => (
      <svg className='illustration' width="859" height="859" viewBox="0 0 859 859" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="859" height="859" fill={formatColor(colors[0])}/>
-<path d="M677 677H182V182H677V677ZM429 300C357.203 300 299 358.203 299 430C299 501.797 357.203 560 429 560C500.797 560 559 501.797 559 430C559 358.203 500.797 300 429 300Z" fill={formatColor(colors[2])}/>
-<rect x="723.906" y="96" width="47.1009" height="890.175" transform="rotate(44.4977 723.906 96)" fill={formatColor(colors[1])}/>
-<path d="M677 677H182V420H299.379C299.128 423.3 299 426.635 299 430C299 501.797 357.203 560 429 560C500.797 560 559 501.797 559 430C559 426.635 558.872 423.3 558.621 420H677V677Z" fill={formatColor(colors[2])}/>
+<path d="M677 677H182V182H677V677ZM429 300C357.203 300 299 358.203 299 430C299 501.797 357.203 560 429 560C500.797 560 559 501.797 559 430C559 358.203 500.797 300 429 300Z" fill={formatColor(colors[1])}/>
+<rect x="723.906" y="96" width="47.1009" height="890.175" transform="rotate(44.4977 723.906 96)" fill={formatColor(colors[2])}/>
+<path d="M677 677H182V420H299.379C299.128 423.3 299 426.635 299 430C299 501.797 357.203 560 429 560C500.797 560 559 501.797 559 430C559 426.635 558.872 423.3 558.621 420H677V677Z" fill={formatColor(colors[1])}/>
 </svg>
     )
   }, {
@@ -41,25 +41,31 @@ const illustrations = [
     )
   } , 
   {
-    name: 'CHIMNEY',
+    name: 'HOUSES',
     svg: (colors) => (
-      <svg className='illustration' width="859" height="860" viewBox="0 0 859 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className='illustration' width="859" height="859" viewBox="0 0 859 859" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="859" height="859" fill={formatColor(colors[0])}/>
-<rect x="170" y="340" width="107" height="393" fill={formatColor(colors[1])}/>
-<path d="M320.5 25C364.102 25 400.806 54.5297 411.706 94.6807C431.808 60.1848 469.196 37 512 37C555.313 37 593.08 60.7402 613.003 95.917C627.369 89.543 643.271 86 660 86C724.065 86 776 137.935 776 202C776 266.065 724.065 318 660 318C616.686 318 578.919 294.259 558.996 259.082C544.63 265.456 528.729 269 512 269C501.175 269 490.698 267.515 480.758 264.742C467.894 293.199 439.259 313 406 313C381.292 313 359.136 302.071 344.103 284.784C325.474 331.771 279.618 365 226 365C155.86 365 99 308.14 99 238C99 167.86 155.86 111 226 111C226.125 111 226.251 111.002 226.376 111.002C230.673 62.7926 271.173 25 320.5 25Z" fill={formatColor(colors[2])}/>
-<path d="M858.615 859.5H0.384766L429.5 255L858.615 859.5Z" fill={formatColor(colors[1])}/>
+<path d="M358.8 310.732H607.193V577.001H86.4795V311.392H86L86.4795 310.828V310.732H86.5615L222.681 151L358.8 310.732Z" fill={formatColor(colors[1])}/>
+<path d="M607.193 311.082L357.714 311.819L222.253 151H475.688L607.193 311.082Z" fill={formatColor(colors[2])}/>
+<path d="M569.392 510.219H384V708.952H772.643V510.711H773L772.643 510.291V510.219H772.581L670.986 391L569.392 510.219Z" fill={formatColor(colors[1])}/>
+<path d="M384.001 510.479L570.203 511.03L671.306 391H482.151L384.001 510.479Z" fill={formatColor(colors[2])}/>
 </svg>
+
 
     )
   }, 
   {
-    name: 'EYE',
+    name: 'UI',
     svg: (colors) => (
        <svg className='illustration' width="417" height="417" viewBox="0 0 417 417" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="417" height="417" fill={formatColor(colors[0])}/>
-<path d="M210.72 106C287.778 106 357.008 144.559 404.634 205.821C356.924 270.762 285.604 312 205.913 312C128.855 312 59.6257 273.441 12 212.179C59.7095 147.238 131.029 106 210.72 106Z" fill={formatColor(colors[1])}/>
-<circle cx="208" cy="209" r="56" fill={formatColor(colors[2])}/>
+<rect x="19" y="27" width="313" height="28" fill={formatColor(colors[1])}/>
+<rect x="19" y="65" width="156" height="28" fill={formatColor(colors[1])}/>
+<rect x="19" y="121" width="344" height="28" fill={formatColor(colors[1])}/>
+<rect x="19" y="159" width="229" height="28" fill={formatColor(colors[1])}/>
+<ellipse cx="354" cy="349.5" rx="38" ry="37.5" fill={formatColor(colors[2])}/>
 </svg>
+
 
 
     )
