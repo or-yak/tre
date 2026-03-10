@@ -41,7 +41,7 @@ export function totallyRandom () {
     [Math.floor(Math.random() * 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [Math.floor(Math.random() * 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [Math.floor(Math.random() * 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
-  ], info: ["Totally random", "Three random colors, no rules applied"]};
+  ], info: ["Totally random", "Three random colors, no rules applied"], key: 0};
 }
 
 export function monochromaticTints () {
@@ -54,7 +54,7 @@ export function monochromaticTints () {
     [h, s, Math.max(0, l - getRandomInt(9, 34))],
     [h, s, l],
     [h, s, Math.min(100, l + getRandomInt(9, 34))]
-  ], info: ["Monochromatic tints", "Three colors with the same hue and saturation but the lightness is increased"]};
+  ], info: ["Monochromatic tints", "Three colors with the same random hue and saturation, the lightness is increased"], key: 1};
 }
 
 export function monochromaticShades () {
@@ -67,24 +67,23 @@ export function monochromaticShades () {
     [h, s, Math.min(100, l + getRandomInt(9, 34))],
     [h, s, l],
     [h, s, Math.max(0, l - getRandomInt(9, 34))]
-  ], info: ["Monochromatic shades", "Three colors with the same hue and saturation but the lightness is decreased"]};
+  ], info: ["Monochromatic shades", "Three colors with the same random hue and saturation, the lightness is decreased"], key: 2};
 }
 
 export function tightAnalogous() {
   // 3
   const h = getRandomInt(0, 360);
-  const s = getRandomInt(0, 100);
   const offset = getRandomInt(15, 30);
 
   const result = Math.random() < 0.5 ? {palette: [
-    [(h + offset) % 360, s, getRandomInt(0, 50)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 360 - offset) % 360, s, getRandomInt(76, 100)]
-  ], info: ["Tight analogous", "Three colors with similar hues (15°-30° apart) and the same saturation and lightness."]} :{palette: [
-    [(h + 360 - offset) % 360, s, getRandomInt(76, 100)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + offset) % 360, s, getRandomInt(10, 50)]
-  ], info: ["Tight analogous", "Three colors with similar hues (15°-30° apart), the same saturation and different lightness."]}
+    [(h + offset) % 360, getRandomInt(10, 90), getRandomInt(0, 50)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 360 - offset) % 360, getRandomInt(10, 90), getRandomInt(76, 100)]
+  ], info: ["Tight analogous", "Three colors with hues 15°- 30° apart, random saturation and different lightness."], key: 3} :{palette: [
+    [(h + 360 - offset) % 360, getRandomInt(10, 90), getRandomInt(76, 100)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + offset) % 360, getRandomInt(10, 90), getRandomInt(10, 50)]
+  ], info: ["Tight analogous", "Three colors with hues 15°- 30° apart, random saturation and different lightness."], key: 3}
   
   return result
 }
@@ -92,17 +91,16 @@ export function tightAnalogous() {
 export function standardAnalogous() {
   // 4
   const h = getRandomInt(0, 360);
-  const s = getRandomInt(0, 100);
 
   const result = Math.random() < 0.5 ? {palette: [
-    [(h + 30) % 360, s, getRandomInt(0, 50)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 360 - 30) % 360, s, getRandomInt(76, 100)]
-  ], info: ["Standard analogous", "Three colors with similar hues (30° apart) and the same saturation and lightness."]} :{palette: [
-    [(h + 360 - 30 ) % 360, s, getRandomInt(76, 100)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 30) % 360, s, getRandomInt(10, 50)]
-  ], info: ["Standard analogous", "Three colors with similar hues (30° apart) the same saturation and different lightness."]}
+    [(h + 30) % 360, getRandomInt(10, 90), getRandomInt(0, 50)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 360 - 30) % 360, getRandomInt(10, 90), getRandomInt(76, 100)]
+  ], info: ["Standard analogous", "Three colors with hues 30° apart, random saturation and different lightness."], key: 4} :{palette: [
+    [(h + 360 - 30 ) % 360, getRandomInt(10, 90), getRandomInt(76, 100)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 30) % 360, getRandomInt(10, 90), getRandomInt(10, 50)]
+  ], info: ["Standard analogous", "Three colors with hues 30° apart, random saturation and different lightness."], key: 4}
   
   return result
 }
@@ -114,14 +112,14 @@ export function wideAnalogous() {
   const offset = getRandomInt(30, 60);
 
   const result = Math.random() < 0.5 ? {palette: [
-    [(h + offset) % 360, s, getRandomInt(0, 50)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 360 - offset) % 360, s, getRandomInt(76, 100)]
-  ], info: ["Wide analogous", "Three colors with similar hues (30°-60° apart) and the same saturation and lightness."]} :{palette: [
-    [(h + 360 - offset) % 360, s, getRandomInt(76, 100)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + offset) % 360, s, getRandomInt(10, 50)]
-  ], info: ["Wide analogous", "Three colors with similar hues (30°-60° apart), the same saturation and different lightness."]}
+    [(h + offset) % 360, getRandomInt(10, 90), getRandomInt(0, 50)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 360 - offset) % 360, getRandomInt(10, 90), getRandomInt(76, 100)]
+  ], info: ["Wide analogous", "Three colors with hues 30° - 60° apart, random saturation and different lightness."], key: 5} :{palette: [
+    [(h + 360 - offset) % 360, getRandomInt(10, 90), getRandomInt(76, 100)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + offset) % 360, getRandomInt(10, 90), getRandomInt(10, 50)]
+  ], info: ["Wide analogous", "Three colors with hues 30° - 60° apart, random saturation and different lightness."], key: 5}
   
   return result
 }
@@ -131,50 +129,37 @@ export function wideAnalogous() {
 export function triadic() {
   // 6
   const h = getRandomInt(0, 360);
-  const s = getRandomInt(0, 100);
 
   const result = Math.random() < 0.5 ? {palette: [
-    [(h + 120) % 360, s, getRandomInt(0, 50)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 240) % 360, s, getRandomInt(76, 100)]
-  ], info: ["Triadic", "Three colors with hues that are evenly spaced around the color wheel (120° apart) the same saturation and different lightness."]} :{palette: [
-    [(h + 240) % 360, s, getRandomInt(76, 100)], 
-    [h, s, getRandomInt(51, 75)],
-    [(h + 120) % 360, s, getRandomInt(10, 50)]
-  ], info: ["Triadic", "Three colors with hues that are evenly spaced around the color wheel (120° apart) the same saturation and different lightness."]} 
+    [(h + 120) % 360, getRandomInt(10, 90), getRandomInt(0, 50)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 240) % 360, getRandomInt(10, 90), getRandomInt(76, 100)]
+  ], info: ["Triadic", "Three colors with hues evenly spaced around the color wheel (120° apart), random saturation and different lightness."], key: 6} :{palette: [
+    [(h + 240) % 360, getRandomInt(10, 90), getRandomInt(76, 100)], 
+    [h, getRandomInt(10, 90), getRandomInt(51, 75)],
+    [(h + 120) % 360, getRandomInt(10, 90), getRandomInt(10, 50)]
+  ], info: ["Triadic", "Three colors with hues evenly spaced around the color wheel (120° apart), random saturation and different lightness."], key: 6} 
 
-  return result
+  return result 
 }
 
-export function monochromaticTones () {
-  // 7 
-  const h = getRandomInt(0, 360);
-  const s = getRandomInt(33, 44);
-  const l = getRandomInt(25, 85);
-
-  return {palette: [
-    [h, Math.max(0, s - getRandomInt(20, 34)), l],
-    [h, s, l],
-    [h, Math.min(100, s + getRandomInt(20, 34)), l]
-  ], info: ["Monochromatic tones", "Three colors with the same hue and lightness but the saturation is increased"]};
-}
 
 export function randomWarm () {
-  // 8
+  // 7
   return {palette: [
     [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(0, 120), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
-  ], info: ["Random warm", "Three random warm hues (h = 0°- 120°), no other rules applied"]};
+  ], info: ["Random warm", "Three random warm hues (h: 0°- 120°), random saturation and lightness, no other rules applied"], key: 7};
 }
 
 export function randomCool () {
-  // 9
+  // 8
   return {palette: [
     [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(120, 240), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
-  ], info: ["Random cool", "Three random cool hues (h = 120°- 240°), no other rules applied"]};
+  ], info: ["Random cool", "Three random cool hues (h: 120°- 240°), random saturation and lightness, no other rules applied"], key: 8};
 }
 
 export function randomViolets () {
@@ -183,13 +168,91 @@ export function randomViolets () {
     [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     [getRandomInt(240, 360), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
-  ], info: ["Random violets", "Three random violet hues (h = 240°- 360°), no other rules applied"]};
+  ], info: ["Random violets", "Three random violet hues (h: 240°- 360°), random saturation and lightness, no other rules applied"], key: 9};
+}
+
+export function ninetyDegRotation() {
+  // 10
+  const h = getRandomInt(0, 360);
+
+  const result = Math.random() < 0.5 ? {palette: [
+    [(h + 90) % 360, getRandomInt(0, 100), getRandomInt(0, 50)], 
+    [h, getRandomInt(0, 100), getRandomInt(51, 75)],
+    [(h + 360 - 90) % 360, getRandomInt(0, 100), getRandomInt(76, 100)]
+  ], info: ["90° Rotation", "Three colors with hues evenly spaced around the color wheel 90° apart, random saturation and different lightness."], key: 10} :{palette: [
+    [(h + 360 - 90 ) % 360, getRandomInt(0, 100), getRandomInt(76, 100)], 
+    [h, getRandomInt(0, 100), getRandomInt(51, 75)],
+    [(h + 90) % 360, getRandomInt(0, 100), getRandomInt(10, 50)]
+  ], info: ["90° Rotation", "Three colors with hues evenly spaced around the color wheel 90° apart, random saturation and different lightness."], key: 10}
+  
+  return result
+}
+
+export function complementaryAccent() {
+  // 11
+  const h = getRandomInt(0, 360);
+
+  const result = Math.random() < 0.5 ? {palette: [
+    [h, getRandomInt(5, 95), getRandomInt(5, 50)], 
+    [h, getRandomInt(5, 95), getRandomInt(51, 95)],
+    [(h + 180) % 360, getRandomInt(10, 90), getRandomInt(15, 85)]
+  ], info: ["Complementary Accent", "Similar hue in the Primary and Support and a complementary hue for the Accent, random saturation and different lightness."], key: 11} :{palette: [
+    [h, getRandomInt(5, 95), getRandomInt(51, 95)], 
+    [h, getRandomInt(5, 95), getRandomInt(5, 50)],
+    [(h + 180) % 360, getRandomInt(10, 90), getRandomInt(15, 85)]
+  ], info: ["Complementary Accent", "Similar hue in the Primary and Support and a complementary hue for the Accent, random saturation and different lightness."], key: 11}
+  
+  return result
+}
+
+export function complementaryPnSGrayscaleAccent() {
+  // 12
+  const h = getRandomInt(0, 360);
+
+  const result = {palette: [
+     
+    [h, getRandomInt(5, 95), getRandomInt(5, 95)],
+    [(h + 180) % 360, getRandomInt(5, 95), getRandomInt(5, 95)],
+    [0, 0, getRandomInt(0, 100)]
+  ], info: ["Complementary Primary and Support, Grayscale Accent", "Primary and Support are complementary hues with random saturation and lightness, Accent is a random grayscale color."], key: 12}
+    
+  
+  return result
+}
+
+export function splitComplementary() {
+  // 13
+  const h = getRandomInt(0, 360);
+
+    const result = Math.random() < 0.5 ? {palette: [
+     
+    
+    [(h + 150) % 360, getRandomInt(5, 95), getRandomInt(10, 90)],
+    [(h + 210) % 360, getRandomInt(5, 95), getRandomInt(10, 90)],
+    [h, getRandomInt(5, 95), getRandomInt(10, 90)],
+  ], info: ["Split-Complementary", "Primary and Support share close hues and random saturaion and lightness, the Accent is Complementary with random saturaion and lightness"], key: 13} :{palette: [
+    
+    [(h + 210) % 360, getRandomInt(5, 95), getRandomInt(10, 90)],
+    [(h + 150) % 360, getRandomInt(5, 95), getRandomInt(10, 90)],
+    [h, getRandomInt(5, 95), getRandomInt(10, 90)],
+  ], info: ["Split-Complementary", "Primary and Support share close hues and random saturaion and lightness, the Accent is Complementary with random saturaion and lightness"], key: 13}
+  
+  return result
 }
 
 
-export function randomPalette () { 
-  const key = getRandomInt(0, 10);
-  const generators = [totallyRandom, monochromaticTints, monochromaticShades, tightAnalogous, standardAnalogous, wideAnalogous, triadic, monochromaticTones, randomWarm, randomCool, randomViolets];
-  return generators[key]();
+
+export function randomPalette(key) { 
+  const generators = [totallyRandom, monochromaticTints, monochromaticShades, tightAnalogous, standardAnalogous, wideAnalogous, triadic, randomWarm, randomCool, randomViolets, ninetyDegRotation, complementaryAccent, complementaryPnSGrayscaleAccent, splitComplementary];
+  if(key) {
+      
+      return generators[key]();
+
+  } else {
+    const randomKey = getRandomInt(0, 13);
+    return generators[randomKey](); 
+  }
+
+
 
 }

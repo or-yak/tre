@@ -9,19 +9,22 @@ import { randomPalette } from './ColorMethods'
 function App() {
   const [colors,setColors] = useState([[230,100,19],[0,100,41],[51,98,52]]);
   const [info, setInfo] = useState(["Press space to activate the generator", " "]);
+  const [methodKey, setMethodKey] = useState(0);
+  const [isMethodLocked, setIsMethodLocked] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Space") {
-        const newPalette = randomPalette();
+        const newPalette = isMethodLocked ? randomPalette(methodKey) : randomPalette();
         setColors(newPalette.palette);
         setInfo(newPalette.info);
+        setMethodKey(newPalette.key);
+
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
+  }, [isMethodLocked, methodKey]);   
   return (
     <div className="App">
       <div className='header'>
@@ -39,7 +42,7 @@ function App() {
 
               <div className='method-container'>
                 <hr/>
-                <h3 className='method-title'>{info[0]}</h3>
+                <h3 className='method-title'>{info[0]}<p onClick={()=>{setIsMethodLocked(!isMethodLocked)}}>{isMethodLocked ? "Locked" : "Lock"}</p></h3>
                 <p className='method-info'>{info[1]}</p>
               </div>
           
