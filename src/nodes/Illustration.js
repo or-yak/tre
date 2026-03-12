@@ -73,7 +73,7 @@ const illustrations = [
 ]
 
 
-export default function Illustration({colors}) {
+export default function Illustration({colors,isExportPopupOpen,setIsExportPopupOpen}) {
   const [currentIllustration, setCurrentIllustration] = useState(0);
 
   const switchIllustration = () => {
@@ -87,12 +87,16 @@ export default function Illustration({colors}) {
   return (
     <div className='illustration-container'>
       {illustrations[currentIllustration].svg(colors)}
-      <p
+      <div className="illustration-actions"><p
         className='illustration-name'
         onClick={() => switchIllustration()}
       >
         {illustrations[currentIllustration].name}
-      </p>      
+      </p>   
+      {!isExportPopupOpen && (
+        <span class="material-symbols-sharp download-icon" onClick={() => setIsExportPopupOpen(true)}>download</span>
+      )}
+      </div>   
     </div>
   )
 }
