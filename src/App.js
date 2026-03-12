@@ -50,7 +50,7 @@ function App() {
         <div className='output-container'>
           <Illustration colors={colors} isExportPopupOpen={false} setIsExportPopupOpen={setIsExportPopupOpen}/> 
           <div className='info-container'>
-             <div className='color-tags'> 
+             <div className='color-tags'>  
               <ColorTag text="60% - Primary" color={colors[0]}/>    
               <ColorTag text="30% - Support" color={colors[1]}/>    
               <ColorTag text="10% - Accent" color={colors[2]}/>  
