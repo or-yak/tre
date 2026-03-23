@@ -18,16 +18,21 @@ function App() {
       if (e.code === "Space") {
         e.preventDefault(); 
         if (!isExportPopupOpen) { 
-          const newPalette = isMethodLocked ? randomPalette(methodKey) : randomPalette();
-        setColors(newPalette.palette);
-        setInfo(newPalette.info);
-        setMethodKey(newPalette.key); }
+          generateNewPalette();
+        }
 
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMethodLocked, methodKey, isExportPopupOpen]);   
+
+  const generateNewPalette = () => {
+    const newPalette = isMethodLocked ? randomPalette(methodKey) : randomPalette();
+    setColors(newPalette.palette);
+    setInfo(newPalette.info);
+    setMethodKey(newPalette.key);
+  }
 
   const exportAsPNG = (illustrationOnly) => {
     const element = illustrationOnly ? document.querySelector('.export-illustration') : document.querySelector('.export-content');
@@ -50,7 +55,6 @@ function App() {
       </div>
         <div className='output-container'>
           <Illustration colors={colors} isExportPopupOpen={false} setIsExportPopupOpen={setIsExportPopupOpen}/> 
-          <hr/> 
           <div className='info-container'>
              <div className='color-tags'>  
               <ColorTag text="60% - Primary" color={colors[0]}/>    
@@ -63,8 +67,13 @@ function App() {
                 <h3 className='method-title'>{info[1] === " " ? " " : <span  onClick={()=>{setIsMethodLocked(!isMethodLocked)}}>{isMethodLocked ? <span  class="material-symbols-sharp lock-toggle">lock</span> : <span Class="material-symbols-sharp lock-toggle">lock_open</span>}</span>}{info[0]}</h3>
                 <p className='method-info'>{info[1]}</p>
               </div>
+
+              <hr/>
+              <p className='contact-info'>tre is a personal project in beta version. If you experience any bugs or have suggestions to improve the app, please contact me at or.jak.design@gmail.com or @400_to_750 on Instagram. (V1.1)</p>
         </div>
     </div>
+
+    <div className='generate-button' onClick={generateNewPalette}>generate</div>
 
     {isExportPopupOpen && ( // export popup
       <div className='export-popup'>
