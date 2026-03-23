@@ -120,14 +120,14 @@
 
 .color-tag-title {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 
 .color-tag-info {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 300;
   margin-top: 2px;
   color: #515151;
@@ -167,13 +167,13 @@ hr {
   justify-content: flex-start;
   margin: 0;
   margin-top: 8px;
-    width: 60vh;
+  width: 60vh;
 
 
 }
 
 .method-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin: 0;
 
@@ -183,11 +183,11 @@ hr {
 }
 
 .method-info {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 300;
   margin: 0;
   text-align: left;
-  height: 30px;
+  height: 35px;
 }
 
 /* header */
@@ -220,11 +220,11 @@ hr {
 }
 
 .contact-info {
-  font-size: 12.5px;
+  font-size: 13px;
   text-align: left;
   font-weight: 200;
   color: #1f1f1f;
-  margin-top: -10px;
+  margin-top: -6px;
   height: 40px;
 }
 
@@ -289,7 +289,7 @@ hr {
 }
 
 .popup-button {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   cursor: pointer;
   text-decoration: underline;
@@ -315,7 +315,7 @@ hr {
   color: white;
   width: 100vw;
   height: 65px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   cursor: pointer;
   
@@ -336,7 +336,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: flex-start;  
-    height: 1100px; 
+    height: 1120px; 
     width: 100vw;
     overflow: hidden;
   }
@@ -353,7 +353,7 @@ hr {
   }
 
   .info {
-    font-size: 12.5px;
+    font-size: 13px;
     margin-top: 52px;
     margin-right: 14px;
     
@@ -373,7 +373,7 @@ hr {
   }
 
   .illustration-name {
-    font-size: 12px;
+    font-size: 14px;
     width: 60px;
   }
 
@@ -402,7 +402,7 @@ hr {
 }
 
 .color-tag-info {
-  font-size: 13.5px;
+  font-size: 14.5px;
 }
 
   .output-container {
@@ -412,7 +412,7 @@ hr {
   }
 
   .color-tag-title {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .method-container {
@@ -424,18 +424,18 @@ hr {
 } 
 
 .method-title {
-  font-size: 14px;  
+  font-size: 16px;  
   
 }
 
 .method-info {
-  font-size: 12px;
-
+  font-size: 14px;
+  height: 68px;
   
 }
 
 .lock-toggle {
-  font-size: 14px;
+  font-size: 14.5px;
 
 }
 

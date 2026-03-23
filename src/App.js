@@ -69,7 +69,7 @@ function App() {
               </div>
 
               <hr/>
-              <p className='contact-info'>tre is a personal project in beta version. If you experience any bugs or have suggestions to improve the app, please contact me at or.jak.design@gmail.com or @400_to_750 on Instagram. (V1.1)</p>
+              <p className='contact-info'>tre is a personal project in beta version. If you experience any bugs or have suggestions to improve the app, please contact me at or.jak.design@gmail.com or @400_to_750 on Instagram. (V1.1.5)</p>
         </div>
     </div>
 
