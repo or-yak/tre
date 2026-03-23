@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Space") {
+        e.preventDefault(); 
         if (!isExportPopupOpen) { 
           const newPalette = isMethodLocked ? randomPalette(methodKey) : randomPalette();
         setColors(newPalette.palette);
@@ -28,8 +29,8 @@ function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMethodLocked, methodKey, isExportPopupOpen]);   
 
-  const exportAsPNG = () => {
-    const element = document.querySelector('.export-content');
+  const exportAsPNG = (illustrationOnly) => {
+    const element = illustrationOnly ? document.querySelector('.export-illustration') : document.querySelector('.export-content');
     html2canvas(element).then(canvas => {
       const pngFile = canvas.toDataURL('image/png');
       const downloadLink = document.createElement('a');
@@ -45,10 +46,11 @@ function App() {
     <div className="App">
       <div className='header'>
         <h1 className='tre'>tre</h1>
-        <h2 className='info'>The 60-30-10 rule color palette generator<br/> Press 'space' to generate a new palette</h2>
+        <h2 className='info'>The 60-30-10 rule color palette generator<span className='computer-instructions'><br/> Press 'space' to generate a new palette</span></h2>
       </div>
         <div className='output-container'>
           <Illustration colors={colors} isExportPopupOpen={false} setIsExportPopupOpen={setIsExportPopupOpen}/> 
+          <hr/> 
           <div className='info-container'>
              <div className='color-tags'>  
               <ColorTag text="60% - Primary" color={colors[0]}/>    
@@ -68,15 +70,17 @@ function App() {
       <div className='export-popup'>
         <div className='export-content'>
           <div className='export-header '>
-        <h1 className='tre'>tre</h1> 
+        <h1 className='tre tre-export'>tre</h1> 
         <h2 className='export-info'>{hslToHex(colors[0])} {hslToHex(colors[1])} {hslToHex(colors[2])}</h2>
       </div>
+          <div className='export-illustration'>
           <Illustration colors={colors} isExportPopupOpen={true} />
-
+          </div>
         </div>
         <div className="popup-buttons">
           <h3 className="popup-button" onClick={() => setIsExportPopupOpen(false)}>Close</h3>
-          <h3 className="popup-button" onClick={exportAsPNG}>Export as PNG</h3>
+          <h3 className="popup-button" onClick={() => exportAsPNG(false)}>Save Illustration and colors</h3>
+          <h3 className="popup-button" onClick={() => exportAsPNG(true)}>Save Illustration Only</h3>
         </div>
       </div>
     ) 

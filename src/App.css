@@ -49,7 +49,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 16px;
 }
 
 .illustration-name {
@@ -179,6 +178,7 @@ hr {
 
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 
 .method-info {
@@ -198,6 +198,7 @@ hr {
   justify-content: flex-start;
   width: 60vh;
   height: 50px;
+  padding-bottom: 5px;
 
 }
 
@@ -261,6 +262,7 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 8px;
 
   width: 60vh;
   height: 50px;
@@ -283,46 +285,81 @@ hr {
   text-decoration-thickness: 1px;
 }
 
-
-/* responsiveness */
-@media (max-height: 850px) {
-  .App {
-
-  width: 100vw;
-  height: 100vh;
+.export-illustration {
+  height: 60vh;
+  width: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   
 }
 
-.output-container {
-  flex-direction: row;
-}
 
-.color-tag-title {
-  font-size: 14px;
-}
+/* responsiveness */
 
-.method-container {
-  margin-left: 24px;
-  width: 20vw;
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  
+    height: 120vh;  
+  }
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
+  .header {
+    width: 40vh;
+    margin-top: 32px;
+    padding-bottom: 0px;
+  }
 
+  .tre {
+    font-size: 48px;
+    width: 48px;
+  }
 
-.header {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-}
+  .info {
+    font-size: 12.5px;
+    margin-top: 52px;
+    margin-right: 14px;
+    
+  }
+  .illustration {
+    height: 40vh !important;
+    width: 40vh !important;
+  }
 
-.color-tags {
+  .illustration-actions {
+    width: 40vh;
+
+  }
+
+  .download-icon {
+    font-size: 18px;
+  }
+
+  .illustration-name {
+    font-size: 12px;
+    width: 60px;
+  }
+
+  .computer-instructions {
+    visibility: hidden;
+  }
+
+  .illustration-container {
+    width: 40vh;
+  }
+
+  .info-container {
+    width: 40vh;
+    margin-top: 12px;
+  }
+
+  .color-tags {
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  width: auto;  
-  margin-left: 24px;
+  width: 40vh;  
 }
 
 .color-tag {
@@ -333,28 +370,64 @@ hr {
   font-size: 13.5px;
 }
 
-hr {
-  visibility: hidden;
-}
+  .output-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .color-tag-title {
+    font-size: 14px;
+  }
+
+  .method-container {
+    width: 40vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+} 
 
 .method-title {
-  font-size: 16px;
-  text-align: left;
-}
-
-.method-info {
-  font-size: 14px;
-  height: auto;
+  font-size: 14px;  
   
 }
 
-.info-container {
-  height: 60vh;
-  margin-top: 16px;
-  width: 15vw;
+.method-info {
+  font-size: 12px;
+  
 }
 
-.info {
+.lock-toggle {
   font-size: 14px;
+
 }
+
+.export-content {
+  width: 40vh; }
+
+.export-header {
+  width: 40vh;}
+
+.export-info {
+  font-size: 18px;}
+
+.tre-export {
+  height: 42px;}
+
+.export-illustration {
+  height: 40vh !important;
+  width: 40vh !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.popup-buttons {
+  font-size: 14px;
+  flex-direction: column-reverse;
+}
+
 }

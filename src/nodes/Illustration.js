@@ -87,16 +87,13 @@ export default function Illustration({colors,isExportPopupOpen,setIsExportPopupO
   return (
     <div className='illustration-container'>
       {illustrations[currentIllustration].svg(colors)}
-      <div className="illustration-actions"><p
-        className='illustration-name'
-        onClick={() => switchIllustration()}
-      >
-        {illustrations[currentIllustration].name}
-      </p>   
       {!isExportPopupOpen && (
-        <span class="material-symbols-sharp download-icon" onClick={() => setIsExportPopupOpen(true)}>download</span>
-      )}
-      </div>   
+        <div className="illustration-actions">
+          <p className='illustration-name' onClick={() => switchIllustration()}>
+          {illustrations[currentIllustration].name}</p> 
+          <span class="material-symbols-sharp download-icon" onClick={() => setIsExportPopupOpen(true)}>download</span>
+      </div>   )}
+      
     </div>
   )
 }
