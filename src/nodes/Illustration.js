@@ -3,13 +3,14 @@ import { formatColor } from '../ColorMethods'
 
 const illustrations = [
   {
-    name: 'ALBERS',
+    name: 'SQUARES',
     svg: (colors) => (
-      <svg className='illustration' width="915" height="915" viewBox="0 0 915 915" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="915" height="915" fill={formatColor(colors[0])}/>
-        <rect x="180" y="275" width="550" height="550" fill={formatColor(colors[1])}/>
-        <rect x="270" y="407" width="371" height="371" fill={formatColor(colors[2])}/>
-      </svg>
+      <svg className='illustration' width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1000" height="1000" fill={formatColor(colors[0])}/>
+<rect x="184" y="184" width="632" height="632" fill={formatColor(colors[1])}/>
+<rect x="342" y="342" width="316" height="316" fill={formatColor(colors[2])}/>
+</svg>
+
     )
   }, 
   {
